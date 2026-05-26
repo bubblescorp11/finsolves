@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>`,
+    title: 'SAP Group Reporting Implementation',
+    desc: 'End-to-end implementation of SAP Group Reporting tailored to your organizational structure, chart of accounts, and consolidation requirements. We deliver fast, proven deployments with minimal business disruption.',
+    highlights: ['Chart of accounts design', 'Entity hierarchy setup', 'Elimination rules configuration', 'Go-live support & training'],
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>`,
+    title: 'Financial Consolidation Optimization',
+    desc: 'Streamline your group consolidation process to reduce close cycles, improve accuracy, and provide real-time visibility into your group financial position.',
+    highlights: ['Close cycle reduction', 'Intercompany elimination', 'Currency translation automation', 'Minority interest handling'],
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
+    title: 'Regulatory Compliance & Reporting',
+    desc: 'Ensure full compliance with IFRS, US GAAP, and local regulatory standards. Our experts configure SAP Group Reporting to meet your audit and disclosure requirements.',
+    highlights: ['IFRS 10/11/12 consolidation', 'US GAAP reporting packs', 'Statutory reporting', 'Audit trail & data lineage'],
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+    title: 'Data Migration & Integration',
+    desc: 'Migrate legacy financial data and integrate SAP Group Reporting with your existing ERP landscape, data warehouse, and planning tools seamlessly.',
+    highlights: ['Legacy system migration', 'SAP S/4HANA integration', 'BW/4HANA connectivity', 'API & middleware setup'],
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`,
+    title: 'Training & Change Management',
+    desc: 'Empower your finance team with role-based training programs designed around SAP Group Reporting workflows. Drive adoption and long-term success.',
+    highlights: ['Role-specific training', 'Train-the-trainer programs', 'User documentation', 'Ongoing enablement'],
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>`,
+    title: 'Managed Services & Support',
+    desc: 'Ongoing managed services to keep your SAP Group Reporting environment optimized, updated, and performing at peak efficiency year-round.',
+    highlights: ['24/7 technical support', 'Upgrade management', 'Performance monitoring', 'Continuous improvement'],
+  },
+];
+---
+
+<Layout
+  title="Services — SAP Group Reporting Solutions"
+  description="Explore Finsolves' comprehensive SAP Group Reporting services including implementation, consolidation optimization, compliance reporting, and managed services."
+>
+  <Navbar />
+  <main>
+    <!-- Page Hero -->
+    <section class="pt-28 pb-16 bg-linear-to-br from-slate-50 via-blue-50/30 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">What We Do</p>
+        <h1 class="font-display font-extrabold text-4xl lg:text-5xl text-navy-900 mb-5 leading-tight">
+          Comprehensive SAP Group<br class="hidden sm:block"/> Reporting Services
+        </h1>
+        <p class="text-slate-500 text-lg max-w-2xl mx-auto">
+          From initial implementation to ongoing optimization, we deliver end-to-end expertise to maximize your SAP Group Reporting investment.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-16 lg:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          {services.map((service) => (
+            <div class="border border-slate-100 rounded-xl p-7 hover:shadow-card-hover hover:border-primary-100 transition-all duration-300 group flex flex-col">
+              <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary-100 transition-colors flex-shrink-0">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" set:html={service.icon} />
+              </div>
+              <h2 class="font-display font-semibold text-[1.05rem] text-navy-900 mb-3">{service.title}</h2>
+              <p class="text-slate-500 text-sm leading-relaxed mb-5 flex-1">{service.desc}</p>
+              <ul class="space-y-1.5">
+                {service.highlights.map((h) => (
+                  <li class="flex items-center gap-2 text-sm text-slate-600">
+                    <svg class="w-4 h-4 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>

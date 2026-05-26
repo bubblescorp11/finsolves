@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+
+const stats = [
+  { value: '200+', label: 'Successful Implementations' },
+  { value: '40+', label: 'Countries Served' },
+  { value: '98%', label: 'Client Satisfaction Rate' },
+  { value: '15+', label: 'Years of SAP Expertise' },
+];
+
+const team = [
+  { name: 'Alexandra Chen', role: 'CEO & Co-founder', initials: 'AC', color: 'bg-primary-100 text-primary-700' },
+  { name: 'Marcus Patel', role: 'Chief Technology Officer', initials: 'MP', color: 'bg-emerald-100 text-emerald-700' },
+  { name: 'Sarah Williams', role: 'Head of Consulting', initials: 'SW', color: 'bg-purple-100 text-purple-700' },
+  { name: 'David Kim', role: 'Director of Client Success', initials: 'DK', color: 'bg-amber-100 text-amber-700' },
+];
+
+const values = [
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
+    title: 'Excellence',
+    desc: 'We hold ourselves to the highest standards of delivery, quality, and professionalism in everything we do.',
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>`,
+    title: 'Partnership',
+    desc: 'We act as trusted long-term partners, deeply invested in our clients\' success beyond the project timeline.',
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+    title: 'Innovation',
+    desc: 'We constantly evolve our methods, tools, and expertise to deliver cutting-edge SAP solutions.',
+  },
+];
+---
+
+<Layout
+  title="About Us — Finsolves"
+  description="Learn about Finsolves — our mission, values, and the expert team driving SAP Group Reporting excellence for finance organizations worldwide."
+>
+  <Navbar />
+  <main>
+    <!-- Hero -->
+    <section class="pt-28 pb-16 bg-linear-to-br from-slate-50 via-blue-50/30 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <p class="text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">Our Story</p>
+          <h1 class="font-display font-extrabold text-4xl lg:text-5xl text-navy-900 mb-6 leading-tight">
+            Experts in SAP Financial Consolidation
+          </h1>
+          <p class="text-slate-500 text-lg leading-relaxed mb-8 max-w-2xl">
+            Finsolves was founded with a singular mission: to help finance leaders harness the full power of SAP Group Reporting. We combine deep technical expertise with real-world financial knowledge to deliver solutions that truly transform how organizations close, consolidate, and report.
+          </p>
+          <p class="text-slate-500 text-lg leading-relaxed max-w-2xl">
+            Headquartered in New York with a global delivery team, we've partnered with organizations across 40+ countries — from mid-market enterprises to Fortune 500 companies — to accelerate their financial close and improve reporting accuracy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-14 bg-white border-b border-slate-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat) => (
+            <div class="text-center py-6 border border-slate-100 rounded-xl">
+              <div class="font-display font-extrabold text-4xl text-primary-600 mb-1">{stat.value}</div>
+              <div class="text-slate-500 text-sm">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-16 lg:py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <p class="text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">What We Stand For</p>
+          <h2 class="font-display font-bold text-3xl lg:text-4xl text-navy-900">Our Core Values</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+          {values.map((val) => (
+            <div class="bg-white rounded-xl p-8 border border-slate-100 text-center hover:shadow-card-hover transition-all duration-300">
+              <div class="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5 mx-auto">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" set:html={val.icon} />
+              </div>
+              <h3 class="font-display font-semibold text-xl text-navy-900 mb-3">{val.title}</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">{val.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="py-16 lg:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <p class="text-primary-600 text-xs font-semibold uppercase tracking-widest mb-3">The People Behind Finsolves</p>
+          <h2 class="font-display font-bold text-3xl lg:text-4xl text-navy-900">Leadership Team</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {team.map((member) => (
+            <div class="border border-slate-100 rounded-xl p-6 text-center hover:shadow-card-hover transition-all duration-300">
+              <div class={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl font-bold ${member.color}`}>
+                {member.initials}
+              </div>
+              <h3 class="font-display font-semibold text-[15px] text-navy-900">{member.name}</h3>
+              <p class="text-slate-500 text-xs mt-1">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
