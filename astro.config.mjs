@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://finsolves.com',
+  site: 'https://yourgithubusername.github.io',
   vite: {
     plugins: [tailwindcss()],
   },
