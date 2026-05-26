@@ -6,5 +6,8 @@ export default defineConfig({
   site: 'https://yourgithubusername.github.io',
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      tsconfigPaths: true,
+    },
   },
 });
