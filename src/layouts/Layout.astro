@@ -12,6 +12,7 @@ const {
   description = 'Finsolves delivers expert SAP Group Reporting solutions to streamline your financial consolidation, ensure compliance, and drive trusted insights across your global organization.',
   canonical = Astro.url.href,
 } = Astro.props;
+const faviconHref = `${import.meta.env.BASE_URL}favicon.svg`;
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -28,7 +29,7 @@ const {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={faviconHref} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

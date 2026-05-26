@@ -1,5 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
+const withBase = (path) => `${import.meta.env.BASE_URL}${path === '/' ? '' : path.replace(/^\//, '')}`;
 ---
 
 <footer class="bg-navy-900 text-slate-400">
@@ -7,7 +8,7 @@ const currentYear = new Date().getFullYear();
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       <!-- Brand -->
       <div class="lg:col-span-2">
-        <a href="/" class="flex items-center gap-2.5 mb-4">
+        <a href={withBase('/')} class="flex items-center gap-2.5 mb-4">
           <div class="flex items-end gap-[3px] h-7">
             <div class="w-[5px] h-3 bg-primary-500 rounded-sm"></div>
             <div class="w-[5px] h-5 bg-primary-500 rounded-sm"></div>
@@ -41,7 +42,7 @@ const currentYear = new Date().getFullYear();
             { label: 'Contact', href: '/contact' },
           ].map(link => (
             <li>
-              <a href={link.href} class="text-sm hover:text-white hover:text-primary-400 transition-colors">{link.label}</a>
+              <a href={withBase(link.href)} class="text-sm hover:text-white hover:text-primary-400 transition-colors">{link.label}</a>
             </li>
           ))}
         </ul>
