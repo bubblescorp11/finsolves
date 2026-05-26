@@ -1,4 +1,6 @@
 ---
+const withBase = (path) => `${import.meta.env.BASE_URL}${path === '/' ? '' : path}`;
+
 const features = [
   {
     icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>`,
@@ -36,7 +38,7 @@ const features = [
         <p class="text-slate-500 text-[15px] leading-relaxed mb-6">
           SAP Group Reporting is purpose-built for modern finance teams who need accuracy, agility, and control across complex corporate structures.
         </p>
-        <a href="/services" class="inline-flex items-center gap-1.5 text-primary-600 font-semibold text-sm hover:text-primary-700 transition-colors group">
+        <a href={withBase('/services')} class="inline-flex items-center gap-1.5 text-primary-600 font-semibold text-sm hover:text-primary-700 transition-colors group">
           See how it works
           <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

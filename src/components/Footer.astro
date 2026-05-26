@@ -1,6 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
-const withBase = (path) => `${import.meta.env.BASE_URL}${path === '/' ? '' : path.replace(/^\//, '')}`;
+const withBase = (path) => `${import.meta.env.BASE_URL}${path === '/' ? '' : path}`;
 ---
 
 <footer class="bg-navy-900 text-slate-400">

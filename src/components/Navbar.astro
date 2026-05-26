@@ -7,7 +7,7 @@ const navLinks = [
 ];
 
 const currentPath = Astro.url.pathname;
-const withBase = (path) => `${import.meta.env.BASE_URL}${path === '/' ? '' : path.replace(/^\//, '')}`;
+const withBase = (path) => `${import.meta.env.BASE_URL}${path === '/' ? '' : path}`;
 ---
 
 <header

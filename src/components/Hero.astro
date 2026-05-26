@@ -1,6 +1,6 @@
 ---
 import DashboardMockup from './DashboardMockup.astro';
-const withBase = (path) => `${import.meta.env.BASE_URL}${path === '/' ? '' : path.replace(/^\//, '')}`;
+const withBase = (path) => `${import.meta.env.BASE_URL}${path === '/' ? '' : path}`;
 ---
 
 <section class="relative pt-28 pb-12 lg:pt-32 lg:pb-16 overflow-hidden bg-linear-to-br from-slate-50 via-blue-50/30 to-white">
